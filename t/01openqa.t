@@ -11,9 +11,9 @@ isnt($bot->tell_indirect('perl'), 'I hear Ruby is better than perl..', 'only res
 
 # defcon tests
 $bot->{handlers}->{openqa}->set(defcon1_allowed => 'foo|bar');
-like($bot->tell_direct('defcon 1'), qr/What did I tell you.*/, 'don\'t allow setting defcon works!');
+like($bot->tell_direct('defcon 1'), qr/What did I tell you.*/, 'do not allow setting DEFCON works');
 $bot->{handlers}->{openqa}->set(defcon1_allowed => 'test_user|foo|bar');
-like($bot->tell_direct('defcon 1'), qr/Heads up.*DEFCON increase/, 'set Defcon works!');
+like($bot->tell_direct('defcon 1'), qr/Heads up.*DEFCON increase/, 'set DEFCON works!');
 like($bot->tell_direct('defcon 5'), qr/We are down to/);
 
 done_testing();
